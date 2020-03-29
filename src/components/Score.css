@@ -1,0 +1,15 @@
+.Item__right .score {
+  width: 2.5rem;
+}
+
+.Item__right.SONGS .score {
+  width: 6rem;
+}
+
+.Item__right.IT .score {
+  width: 6rem;
+}
+
+.star {
+  color: cadetblue;
+}

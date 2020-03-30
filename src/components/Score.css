@@ -1,15 +1,41 @@
 .Item__right .score {
   width: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .Item__right.SONGS .score {
   width: 6rem;
 }
 
-.Item__right.IT .score {
-  width: 6rem;
-}
-
 .star {
   color: cadetblue;
+}
+
+.ratingScore {
+  font-size: 1rem;
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 4px 3px 1px;
+  border-radius: 10px;
+}
+.ratingScore.one {
+  background-color: #fbd6a5;
+}
+.ratingScore.two {
+  background-color: #faad9c;
+}
+.ratingScore.three {
+  background-color: #fecd58;
+}
+.ratingScore.four {
+  background-color: #f9a63c;
+}
+.ratingScore.five {
+  background-color: #ffa7a7;
+}
+.ratingScore.six {
+  background-color: #f76647;
 }

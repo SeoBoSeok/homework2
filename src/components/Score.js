@@ -18,16 +18,39 @@ export default class Score extends Component {
         );
       }
     } else if (type === "BOOKS") {
-      content = score.toFixed(1);
-    } else if (type === "IT") {
-      content = [];
-      for (var i = 0; i < score; i++) {
-        content.push(
-          <span key={`star${id}${i}`} className="star">
-            &#9733;
-          </span>
-        );
+      let scoreText = "";
+      if (score > 9) {
+        scoreText = "six";
+      } else if (score > 7) {
+        scoreText = "five";
+      } else if (score > 5) {
+        scoreText = "four";
+      } else if (score > 3) {
+        scoreText = "three";
+      } else if (score > 1) {
+        scoreText = "two";
+      } else {
+        scoreText = "one";
       }
+      content = (
+        <div className={`ratingScore ${scoreText}`}>{score} &#9733;</div>
+      );
+    } else if (type === "IT") {
+      let scoreText = "";
+      if (score > 9) {
+        scoreText = "six";
+      } else if (score > 7) {
+        scoreText = "five";
+      } else if (score > 5) {
+        scoreText = "four";
+      } else if (score > 3) {
+        scoreText = "three";
+      } else if (score > 1) {
+        scoreText = "two";
+      } else {
+        scoreText = "one";
+      }
+      content = <img src={`/images/${scoreText}.svg`} height="32" width="32" />;
     } else {
       content = score.toFixed(1);
     }

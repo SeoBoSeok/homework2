@@ -17,45 +17,39 @@ const TYPEINFO = {
     STEP: 1
   },
   BOOKS: {
-    MAX_SCORE: 10.0,
-    STEP: 0.5
+    MAX_SCORE: 10,
+    STEP: 1
   },
   IT: {
-    MAX_SCORE: 5,
+    MAX_SCORE: 10,
     STEP: 1
   }
 };
 
 class App extends Component {
-  id = 1;
   state = {
     all: [],
     todos: [],
     type: TYPE
   };
   handleInsert = text => {
-    this.setState(
-      {
-        all: this.state.all.concat({
-          text: text,
-          id: this.id,
-          score: 0,
-          done: false,
-          type: this.state.type
-        }),
-        todos: this.state.todos.concat({
-          text: text,
-          id: this.id,
-          score: 0,
-          done: false,
-          type: this.state.type
-        })
-      },
-      () => {
-        localStorage.setItem(this.state.type, JSON.stringify(this.state.all));
-      }
-    );
-    this.id++;
+    const id = uuid();
+    this.setState({
+      all: this.state.all.concat({
+        text: text,
+        id: id,
+        score: 0,
+        done: false,
+        type: this.state.type
+      }),
+      todos: this.state.todos.concat({
+        text: text,
+        id: id,
+        score: 0,
+        done: false,
+        type: this.state.type
+      })
+    });
   };
   handleToggle = id => {
     this.setState({

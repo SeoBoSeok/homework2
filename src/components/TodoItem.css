@@ -28,10 +28,6 @@
   width: 18rem;
 }
 
-.Item__right.IT {
-  width: 18rem;
-}
-
 .Item__right span:not(.remove) {
   border: 1px dashed #bbb;
 }
